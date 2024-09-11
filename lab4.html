@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Your Custom T-Shirt</title>
+    <link rel="stylesheet" href="lab4.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to CustomWear</h1>
+        <nav>
+            <a href="#order-form">Order</a>
+            <a href="#about-us">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <p>Design your own T-shirt, just the way you want it!</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="form-container">
+            <h2>Place your order!</h2>
+            <form id="order-form" action="/submit_order" method="POST">
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" placeholder="123-456-7890" pattern="\d{3}-\d{3}-\d{4}" title="Phone number format: 123-456-7890" required>
+
+                    <label for="roll_no">Roll Number (Student Only):</label>
+                    <input type="number" id="roll_no" name="roll_no" placeholder="123" min="1">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Order Details</legend>
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required>
+
+                    <label for="color">T-Shirt Color:</label>
+                    <select id="color" name="color" required>
+                        <option value="">Select color</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                        <option value="blue">Blue</option>
+                        <option value="red">Red</option>
+                    </select>
+
+                    <label for="size">Size:</label>
+                    <select id="size" name="size" required>
+                        <option value="">Select size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="x-large">X-Large</option>
+                    </select>
+
+                    <label for="delivery_date">Preferred Delivery Date:</label>
+                    <input type="date" id="delivery_date" name="delivery_date" required>
+
+                    <label for="message">Message on T-Shirt:</label>
+                    <textarea id="message" name="message" placeholder="Type your message here." rows="4" maxlength="100"></textarea>
+                </fieldset>
+
+                <div id="order-preview">
+                    <h3>Order Preview</h3>
+                    <p id="preview_color">T-shirt Color: N/A</p>
+                    <p id="preview_size">T-shirt Size: N/A</p>
+                    <p id="preview_quantity">Quantity: 1</p>
+                    <p id="preview_delivery">Preferred Delivery Date: N/A</p>
+                    <p id="total_price">Total Price: $25</p>
+                </div>
+
+                <div class="button-container">
+                    <input type="submit" value="Place Order">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 CustomWear. All rights reserved.</p>
+    </footer>
+
+    <script src="lab4.js"></script>
+</body>
+</html>
